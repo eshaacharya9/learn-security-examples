@@ -1,1 +1,32 @@
-Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+Q. Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+1. Session Secret Management: In the insecure version, the session secret is statically set as "SOMESECRET",
+which poses a security risk if the secret is compromised. This vulnerability could lead to session hijacking or spoofing, 
+as attackers could potentially gain unauthorized access to the session data. By contrast, the secure version dynamically sets 
+the session secret using ${secret}, assuming that 'secret' is securely provided. This approach enhances security by ensuring 
+that the session secret is managed more robustly, reducing the risk of spoofing or unauthorized access.
+
+
+2. HTTPOnly Flag: In the insecure code, the lack of the httpOnly flag allows client-side scripts to access the session cookie. 
+This vulnerability exposes the session identifier to Cross-Site Scripting (XSS) attacks, enabling attackers to steal sensitive 
+session data. By setting httpOnly: true in the secure version, the session cookie becomes inaccessible to client-side scripts, 
+mitigating the risk of XSS attacks. This prevents malicious actors from accessing or manipulating the session data, 
+thereby enhancing overall security.
+
+3. SameSite Flag: The absence of the sameSite flag in the initial code makes the session vulnerable to Cross-Site Request Forgery
+(CSRF) attacks. Without this flag, the session cookie can be sent along with cross-origin requests, potentially leading to 
+unauthorized actions on behalf of the user. By setting sameSite: true in the secure version, the session cookie is not sent 
+with cross-origin requests, reducing the risk of CSRF attacks. This preventive measure ensures that actions performed on behalf 
+of the user are legitimate and authorized, bolstering the security of session management.
+
+Conclusion:
+The secure version of the application addresses these vulnerabilities by adopting best practices for session management. 
+By securely managing the session secret, restricting access to session cookies, and preventing them from being sent with 
+cross-origin requests, the application enhances its overall security posture, reducing the risk of unauthorized access and 
+data theft.
+
+Q. Which CIA properties do you think Spoofing violates?
+
+Spoofing primarily violates the confidentiality and integrity aspects of the CIA triad by enabling unauthorized access 
+to sensitive information and compromising the trustworthiness of data through impersonation or manipulation.
+
