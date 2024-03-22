@@ -1,0 +1,12 @@
+Q. Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability lies in the insecure handling of user input in the registration process (/register route). 
+In the insecure code, the user input (req.body.name) is directly stored in the session without proper sanitization,
+potentially leaving it vulnerable to XSS attacks. The secure version addresses this vulnerability by implementing input
+sanitization through the escapeHTML function, which escapes special characters in the user input to prevent XSS attacks. 
+This ensures that the user input is treated as plain text and not interpreted as HTML, mitigating the risk of XSS vulnerabilities.
+
+
+Q. Which CIA property does tampering violate?
+Tampering violates the integrity aspect of the CIA triad. It compromises the trustworthiness and reliability of data by 
+unauthorized modification or alteration, leading to potential misinformation or unauthorized access.
