@@ -1,3 +1,23 @@
 Briefly explain the vulnerability and why the secure version prevents the vulnerability.
+
+The vulnerability in the insecure.js code lies in its lack of input validation and sanitation. Specifically, it doesn't check
+the format of the username input, leaving it susceptible to various attacks, including NoSQL injection. Without proper validation
+and sanitation, an attacker could exploit this vulnerability to manipulate the database queries and potentially gain unauthorized access
+to sensitive information.
+
+The secure.js version addresses this vulnerability by incorporating input validation and sanitation mechanisms. It checks if the username 
+is a string and then sanitizes it by removing any non-alphanumeric characters before querying the database. This prevents NoSQL injection 
+attacks by ensuring that the input is properly formatted and doesn't contain any malicious characters that could alter the query's behavior.
+
 Which CIA property does tampering violate?
+
+Tampering violates the CIA (Confidentiality, Integrity, Availability) property of Integrity. By tampering with data or code, an attacker can
+ modify or manipulate it, compromising its integrity. In the context of the given scenario, if an attacker successfully tampers with the
+  username input or database queries, they could compromise the integrity of the system by accessing or altering sensitive user information.
+
 What additional security mechanisms can you incorporate?
+Additional measures could be implemented, such as implementing rate limiting to prevent 
+brute force attacks, enforcing strong password policies, using encryption for sensitive data storage, 
+implementing authentication mechanisms like JWT (JSON Web Tokens) for user authorization, and regularly updating dependencies
+to patch known vulnerabilities. Additionally, logging and monitoring systems could be put in place to detect and respond to any suspicious 
+activities or security breaches promptly.

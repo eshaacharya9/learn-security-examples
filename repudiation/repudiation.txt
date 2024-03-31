@@ -1,2 +1,20 @@
 - Briefly explain the vulnerability and why the secure version is better at preventing repudiation than the insecure version.
+
+The vulnerability in the insecure.js code lies in its lack of authentication and logging mechanisms. 
+It allows any user to send messages without any form of authentication, and it does not log any information 
+about the requests made. This poses a risk of repudiation, as users can deny sending certain messages, and 
+there's no way to trace the origin of messages or actions taken on the server.
+
+In contrast, the secure.js version improves upon this by implementing authentication for sending and retrieving messages. 
+It requires users to be authenticated before sending or accessing messages, mitigating the risk of unauthorized access and providing 
+accountability. Additionally, it incorporates request logging, which records details about each request, including the user's IP address 
+and the actions performed, enhancing traceability and preventing repudiation by providing a clear audit trail of server activities.
+
 - What additional security mechanisms can you incorporate to prevent such attacks?
+
+Implementing user-specific authentication mechanisms such as JWT (JSON Web Tokens) or OAuth for more robust user verification.
+Encrypting sensitive data such as user messages to protect confidentiality and prevent unauthorized access.
+Implementing digital signatures for messages to ensure message integrity and non-repudiation, so users cannot deny sending a message once it's been signed.
+Implementing comprehensive access controls to restrict users' actions based on their roles and permissions, ensuring that only authorized users can perform specific operations.
+Regularly auditing server logs and monitoring user activities to detect any suspicious or unauthorized actions and respond promptly.
+Implementing secure coding practices and performing regular security assessments to identify and mitigate potential vulnerabilities proactively.
