@@ -13,10 +13,17 @@ of unauthorized privilege escalation by requiring both authentication and proper
  
 What additional security mechanisms can you incorporate to prevent such attacks?
 
-Implementing HTTPS to encrypt data transmitted between the client and server, preventing eavesdropping and tampering.
-Implementing input validation and sanitization to prevent injection attacks such as SQL injection or Cross-Site Scripting (XSS).
-Implementing rate limiting to prevent brute force attacks and protect against Denial of Service (DoS) attacks.
-Regularly updating dependencies and libraries to patch known vulnerabilities and improve overall security posture.
-Logging and monitoring user activities to detect and respond to suspicious behavior or potential security breaches promptly.
-Implementing multi-factor authentication (MFA) to add an extra layer of security beyond just username and password.
+1. Implementation Weaknesses: These refer to vulnerabilities and flaws in the way security measures are implemented
+within the system, making it susceptible to various attacks.
+
+2. Absence of Authorization: Authorization is the process of determining whether a user or system is allowed to perform a 
+particular action or access a specific resource. Without proper authorization mechanisms in place, users may gain unauthorized access 
+to sensitive data or perform actions beyond their privileges. This can lead to data breaches, unauthorized modifications, or other security
+incidents.
+
+3. Exposing Services Which Don’t Need To Be: Exposing unnecessary services or endpoints increases the attack surface of the application,
+providing more opportunities for attackers to exploit vulnerabilities. It's essential to minimize the exposure of services to only those
+that are required for the application's functionality. By reducing the number of exposed services, organizations can reduce the likelihood
+of attackers finding and exploiting weaknesses in the system. This principle aligns with the security concept of "least privilege," 
+where only necessary access rights are granted to users or systems.
 

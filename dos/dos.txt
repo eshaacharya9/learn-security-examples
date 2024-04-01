@@ -6,20 +6,16 @@ the server to hang indefinitely. secure.js prevents this vulnerability by includ
 database operation fails or takes a long time, the server will respond with an error message instead of hanging.
 
 - What additional security mechanisms can you incorporate to prevent such attacks?
-Additional Security Mechanisms:
 
-1. Rate Limiting: Implement rate limiting to restrict the number of requests a client can make within a specified time frame, 
-preventing attackers from overwhelming the server with a flood of requests.
+1. Unnecessary Exposure of Services: Reduce the attack surface by limiting the exposure of services and endpoints to only
+what is necessary. Disable or restrict access to any services or endpoints that are not essential for the application's functionality, 
+reducing the potential entry points for attackers.
 
-2. Input Validation: Validate user inputs rigorously to ensure they adhere to expected formats and criteria, minimizing 
-the risk of unexpected behavior or malicious inputs causing disruptions.
+2. Lack of Rate Limiting: Implement rate limiting to mitigate the risk of abuse or exploitation by limiting the number of requests 
+a user or IP address can make within a specific time period. This prevents attackers from overwhelming the system with a large volume 
+of requests, helping to maintain availability and performance.
 
-3. Timeouts: Set timeouts for database operations and other critical tasks to prevent indefinite hanging. 
-
-If an operation exceeds the specified time limit, terminate it and respond with an appropriate error message.
-
-4. Monitoring and Alerting: Implement monitoring systems to detect unusual patterns or spikes in traffic that may 
-indicate a DoS attack. Configure alerts to notify administrators promptly so they can take action to mitigate the attack.
-
-5. Load Balancing and Redundancy: Distribute incoming traffic across multiple servers using load balancers and ensure redundancy 
-in critical components to minimize the impact of a DoS attack on any single server or service.
+3. Failure to Use a Content Delivery Network (CDN) to Handle High Traffic Loads: Utilize a Content Delivery Network (CDN) to distribute
+content and handle high traffic loads efficiently. CDNs cache content closer to users, reducing server load and improving response times. 
+By leveraging a CDN, the application can better withstand distributed denial-of-service (DDoS) attacks and ensure reliable delivery of 
+content to users worldwide.

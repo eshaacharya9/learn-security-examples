@@ -12,8 +12,8 @@ attacks by ensuring that the input is properly formatted and doesn't contain any
 Which CIA property does tampering violate?
 
 Tampering violates the CIA (Confidentiality, Integrity, Availability) property of Integrity. By tampering with data or code, an attacker can
- modify or manipulate it, compromising its integrity. In the context of the given scenario, if an attacker successfully tampers with the
-  username input or database queries, they could compromise the integrity of the system by accessing or altering sensitive user information.
+modify or manipulate it, compromising its integrity. In the context of the given scenario, if an attacker successfully tampers with the
+username input or database queries, they could compromise the integrity of the system by accessing or altering sensitive user information.
 
 What additional security mechanisms can you incorporate?
 Additional measures could be implemented, such as implementing rate limiting to prevent 
